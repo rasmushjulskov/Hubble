@@ -1,0 +1,53 @@
+{
+  "Atoms": {
+    "templates": [
+      {
+        "name": "sgcolors",
+        "data": [
+          {
+            "name": "Blue",
+            "var": "$color-primary",
+            "color": "#5A6BA0",
+            "variation": [
+              {
+                "var": "light",
+                "color": "#6A79A9"
+              },
+              {
+                "var": "dark",
+                "color": "#2F3549"
+              }
+            ]
+          },
+          {
+            "name": "Red",
+            "var": "$color-secondary",
+            "color": "#E64675",
+             "variation": [
+              {
+                "var": "dark",
+                "color": "#db1e55"
+              }
+            ]
+          },
+          {
+            "name": "gray",
+            "var": "$gray7",
+            "color": "#58595B"
+          },
+          {
+            "name": "white",
+            "var": "white",
+            "color": "#fff"
+          }
+        ]
+      },
+      {"name": "sgfonts"}
+    ]
+  },
+  "Molecules": {
+    "templates": [
+      {"name": "test"}
+    ]
+  }
+}

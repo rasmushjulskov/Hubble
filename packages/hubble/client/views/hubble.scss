@@ -1,0 +1,215 @@
+/*------------------------------------*\
+    #styleguide
+\*------------------------------------*/
+
+/* Custom settings --------------------*/
+
+
+/* Default settings -------------------*/
+
+
+
+.sg-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "helvetica";
+  padding-top: 80px;
+}
+
+.sg-element {
+ // @include clearfix; 
+  margin: 30px 0;
+  .sg-element__code {
+    
+  }
+}
+
+.sg-header {
+  font-family: "helvetica";
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  background: rgba(255,255,255 ,.9);
+  color: white;
+  font-size: 24px;
+  
+  &__wrapper {
+    // @include outer-container;
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__logo {
+    padding: 6px 0;
+    width: 200px;
+    float: left;
+    text-align: center;
+    background-color: rgba(0,0,0,.7);
+  }
+
+  &__links {
+    flex-grow: 1;
+    font-size: 16px;
+    color: rgba(0,0,0,.7);
+    text-decoration: none;
+    padding: 68px 12px 0 12px;
+    border-right: 1px solid rgba(0,0,0,.2);
+    border-bottom: 1px solid rgba(0,0,0,.2);
+
+    &:hover {
+      background: rgba(0,0,0,.1);
+    }
+  }
+
+  svg {
+    display: block;
+    width:100%;
+    max-width: 70px;
+    margin: 0 auto; 
+  }
+}
+
+
+/* Color schema ---------------------*/
+
+.sg-colors {
+  // @include clearfix;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none; 
+
+  li {
+    // @extend %clearfix;
+    width: 100%;
+    // @include mq(phablet, tablet) {
+    //   width: 50%;
+      
+    // }
+    // @include mq(tablet, desktop){
+    //   width: 33.33%;
+      
+    // }
+    // @include mq($from: desktop){
+    //   width: 25%;
+      
+    // }
+    
+    margin-bottom: 10px;
+
+    .sg-color {
+      border: 1px solid #cacaca;
+      position: relative;
+      width: 50%; 
+      padding-top: 50%; 
+      float: left; 
+
+      .sg-color__variation {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        height: 35%;
+
+        &:nth-child(2) {
+          left: 50%;
+        }
+      }
+    }
+
+    .sg-color__text {
+      width: 50%;
+      float: left;
+      padding: 10px;
+    }
+  }
+}
+
+
+/* Code elements -------------------*/
+
+.sg-line-behind-text {
+  border-bottom: 1px solid #cacaca;
+  text-align: center;
+  margin: 10px 0 30px 0;
+  display: block;
+  h6 {
+    background: #fff;
+    color: gray;
+    display: inline-block;
+    font-size: 1em;
+    font-weight: 500;
+    padding: 0 10px;
+    position: relative;
+    top: 14px;
+  }
+}
+
+.code-example {
+  display: block;
+}
+
+.editor { 
+  position: relative;
+  width: 100%;
+  height: 100px;
+  display: block;
+}
+
+.expander {  
+  ///////////////////////////////////////////////////////////////////////////////////
+  $base-font-size: 1em !default;
+  $base-line-height: 1.5em !default;
+  $base-spacing: 1.5em !default;
+  $base-accent-color: #477DCA !default;
+  $base-link-color: $base-accent-color !default;
+  $dark-gray: #333 !default;
+  $light-gray: #DDD !default;
+  $base-font-color: $dark-gray !default;
+  
+  p {
+    color: $base-font-color;
+    line-height: $base-line-height;
+  }
+
+  a {
+    color: $base-link-color;
+    text-decoration: none;
+  }
+  //////////////////////////////////////////////////////////////////////////////////
+
+  $expander-arrow-width: 0.7em;
+  $expander-toggle-size: 1em;
+  $expander-toggle-arrow-size: $expander-toggle-size;
+  $expander-toggle-margin: 1em;
+
+  width: 100%;
+
+  .expander-trigger {
+    user-select: none;   
+    cursor: pointer;
+    display: block;
+    font-size: $expander-toggle-size;
+    margin-bottom: $expander-toggle-size;
+    padding-bottom: $expander-toggle-size / 4;
+
+    &:before {
+      font-size: $expander-arrow-width;
+      content: "\25BC";
+      margin-right: 0.5em;
+    }
+  }
+
+  .expander-hidden {
+    &:before {
+      font-size: $expander-arrow-width;
+      content: "\25BA";
+    }
+  }
+
+  .expander-hidden + .expander-content {
+    display: none;
+  }
+}
