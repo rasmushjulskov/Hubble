@@ -3,7 +3,11 @@
 \*------------------------------------*/
 
 /* Custom settings --------------------*/
-
+$phone:240px;
+$phablet: 550px;
+$tablet: 750px;
+$desktop: 980px;
+$widescreen: 1200px;
 
 /* Default settings -------------------*/
 
@@ -13,14 +17,13 @@
   max-width: 1200px;
   margin: 0 auto;
   font-family: "helvetica";
-  padding-top: 80px;
 }
 
 .sg-element {
- // @include clearfix; 
+ // @include clearfix;
   margin: 30px 0;
   .sg-element__code {
-    
+
   }
 }
 
@@ -34,7 +37,7 @@
   background: rgba(255,255,255 ,.9);
   color: white;
   font-size: 24px;
-  
+
   &__wrapper {
     // @include outer-container;
     display: flex;
@@ -68,7 +71,7 @@
     display: block;
     width:100%;
     max-width: 70px;
-    margin: 0 auto; 
+    margin: 0 auto;
   }
 }
 
@@ -79,32 +82,34 @@
   // @include clearfix;
   display: flex;
   flex-wrap: wrap;
-  list-style: none; 
+  list-style: none;
 
   li {
-    // @extend %clearfix;
-    width: 100%;
-    // @include mq(phablet, tablet) {
-    //   width: 50%;
-      
-    // }
-    // @include mq(tablet, desktop){
-    //   width: 33.33%;
-      
-    // }
-    // @include mq($from: desktop){
-    //   width: 25%;
-      
-    // }
-    
+    display: flex;
     margin-bottom: 10px;
+
+    @media screen and (max-width: $phablet) {
+      width: 100%;
+    }
+
+    @media screen and (min-width: $phablet) and (max-width: $tablet) {
+      width: 50%;
+    }
+
+    @media screen and (min-width: $tablet) and (max-width: $desktop) {
+      width: 33.33%;
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: 25%;
+    }
+
 
     .sg-color {
       border: 1px solid #cacaca;
       position: relative;
-      width: 50%; 
-      padding-top: 50%; 
-      float: left; 
+      width: 50%;
+      padding-top: 50%;
 
       .sg-color__variation {
         position: absolute;
@@ -121,7 +126,6 @@
 
     .sg-color__text {
       width: 50%;
-      float: left;
       padding: 10px;
     }
   }
@@ -143,7 +147,7 @@
     font-weight: 500;
     padding: 0 10px;
     position: relative;
-    top: 14px;
+    top: 46px;
   }
 }
 
@@ -151,14 +155,14 @@
   display: block;
 }
 
-.editor { 
+.editor {
   position: relative;
   width: 100%;
   height: 100px;
   display: block;
 }
 
-.expander {  
+.expander {
   ///////////////////////////////////////////////////////////////////////////////////
   $base-font-size: 1em !default;
   $base-line-height: 1.5em !default;
@@ -168,7 +172,7 @@
   $dark-gray: #333 !default;
   $light-gray: #DDD !default;
   $base-font-color: $dark-gray !default;
-  
+
   p {
     color: $base-font-color;
     line-height: $base-line-height;
@@ -188,7 +192,7 @@
   width: 100%;
 
   .expander-trigger {
-    user-select: none;   
+    user-select: none;
     cursor: pointer;
     display: block;
     font-size: $expander-toggle-size;
