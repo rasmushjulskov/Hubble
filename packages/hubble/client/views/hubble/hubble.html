@@ -34,7 +34,7 @@
 
           hubble
         </div>
-         {{#each navigation}} 
+         {{#each navigation}}
         <a class="sg-header__links" href="/styleguide/{{this}}">
           {{this}}
         </a>
@@ -50,7 +50,7 @@
           </div>
 
           <div class="expander">
-            <a href="javascript:void(0)"  class="expander-trigger expander-hidden">Show code</a>
+            <a class="expander-trigger expander-hidden">Show code</a>
             <div class="sg-element__code expander-content">
             {{#markdown}}
   ```html
@@ -76,7 +76,7 @@
 
 <template name="sgcolors">
   <ul class="sg-colors">
-  
+
     {{#each this}}
       <li>
         <div class="sg-color" style="background-color:{{color}}">

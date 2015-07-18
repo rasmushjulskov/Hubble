@@ -18,7 +18,7 @@ Package.onUse(function(api) {
 
   api.use(['fourseven:scss@1.2.3'],'client');
   api.addFiles(['lib/routes/hubbleRoute.js']);
-  api.addFiles(['client/views/hubble.html','client/views/hubble.js', 'client/views/hubble.scss'], 'client');
+  api.addFiles(['client/views/hubble/hubble.html','client/views/hubble/hubble.js', 'client/views/hubble/hubble.scss'], 'client');
 });
 
 Package.onTest(function(api) {
