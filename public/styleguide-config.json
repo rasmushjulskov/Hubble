@@ -42,12 +42,14 @@
           }
         ]
       },
+      {"name": "logoBlue"}
       {"name": "sgfonts"}
     ]
   },
   "Molecules": {
     "templates": [
-      {"name": "test"}
+      {"name": "test"},
+      {"name": "quote"}
     ]
   }
 }
