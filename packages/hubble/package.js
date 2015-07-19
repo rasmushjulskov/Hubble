@@ -2,19 +2,19 @@ Package.describe({
   name: 'rhjulskov:hubble',
   version: '0.0.1',
   // Brief, one-line summary of the package.
-  summary: '',
+  summary: 'Hubble — living style guide [BETA]',
   // URL to the Git repository containing the source code for this package.
-  git: '',
+  git: 'https://github.com/Rhjulskov/hubble',
   // By default, Meteor will default to using README.md for documentation.
   // To avoid submitting documentation, set this field to null.
-  documentation: 'README.md'
+  documentation: '../../README.md'
 });
 
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.2');
   api.use(["iron:router@1.0.7"], {weak: false, unordered: false});
   api.use(['templating']);
-  api.use(['underscore', 'http', 'markdown']);
+  api.use(['underscore', 'http', 'markdown', 'simple:highlight.js@1.0.9']);
 
   api.use(['fourseven:scss@1.2.3'],'client');
   api.addFiles(['lib/routes/hubbleRoute.js']);

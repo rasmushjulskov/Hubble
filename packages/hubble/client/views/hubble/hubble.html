@@ -53,10 +53,9 @@
             <a class="expander-trigger expander-hidden">Show code</a>
             <div class="sg-element__code expander-content">
             {{#markdown}}
-  ```html
-    {{ escaped this.name}}
-  ```
+```html
   {{escaped this.name}}
+```
   {{/markdown}}
             </div>
           </div>
@@ -86,14 +85,17 @@
         {{/each}}
         </div>
         <div class="sg-color__text">
-          <p>{{name}}</p>
-          <p>{{color}}</p>
-          {{#if var}}
-            {{#markdown}}
-  {{var}}
-  {{#each variation}}- {{color}}{{/each}}
-            {{/markdown}}
-          {{/if}}
+          {{#markdown}}
+```html
+{{name}}
+{{color}}
+{{#if var}}
+{{var}}
+{{#each variation}}- {{color}}{{/each}}
+{{/if}}
+```
+{{/markdown}}
+
         </div>
       </li>
     {{/each}}
@@ -126,4 +128,16 @@
   <p><strong>Strong is used to indicate strong importance</strong></p>
   <p><i>This text has added emphasis</i></p>
 
+</template>
+
+<template name="sgEmptyState">
+  <h1>It seem's like something is missing</h1>
+  <!--
+    @summary Renders a template or View to a string of HTML.
+    @locus Client
+    @param {Template|Blaze.View} templateOrView The template (e.g. `Template.myTemplate`) or View object from which to generate HTML.
+  -->
+  <p>
+    <span>Click on 'show code' for an example</span>
+  </p>
 </template>
