@@ -4,12 +4,16 @@ Template['styleguide'].helpers({
   atoms: function(){
     var template = Session.get("sg-template");
     var data = Session.get("sg-data");
-    if(template != null && data != null ){
-      return data[template].templates;
+    if(data != null){
+      if(template != null ){
+        return data[template].templates;
+      } else {
+        return data[_.first(_.keys(data))].templates;
+      }
     } else {
-    //  return data["Frontpage"].templates;
-      // return data.templates;
+      return [{'name': 'sgEmptyState'}];
     }
+
   },
   navigation: function(){
     var data = Session.get("sg-data");
@@ -17,10 +21,15 @@ Template['styleguide'].helpers({
       return _.keys(data);
     }
   },
-  escaped: function(data) {
-    return Blaze.toHTML(Blaze.With({}, function(){
+  escaped: function(id) {
+    var data = Session.get("sg-data");
+    return Blaze.toHTML(Blaze.With(data[id], function() { return Template[id]; }));
+    /*return Template[data]; Blaze.toHTML(Template[data]);*/
+
+    /*Blaze.toHTML(Blaze.With({}, function(){
        Template[data]
     }));
+    */
   }
 });
 
