@@ -1,9 +1,16 @@
-// Write your package code here!
+var getData = function(){
+  HTTP.call("GET", '/hubble-config.json', function(e, content){
+    var data = content.data;
+    if(data != null){
+      Session.set("sg-data", data);
+    }
+  });
+}
 
 Template['styleguide'].helpers({
   atoms: function(){
     var template = Session.get("sg-template");
-    var data = Session.get("sg-data");
+    var data =  Session.get("sg-data");
     if(data != null){
       if(template != null ){
         return data[template].templates;
@@ -11,7 +18,7 @@ Template['styleguide'].helpers({
         return data[_.first(_.keys(data))].templates;
       }
     } else {
-      return [{'name': 'sgEmptyState'}];
+      return [{'name': 'Welcome To Hubble'}];
     }
 
   },
@@ -22,7 +29,7 @@ Template['styleguide'].helpers({
     }
   },
   escaped: function(id) {
-    var data = Session.get("sg-data");
+    var data = Session.get("sg-data") || Template;
     return Blaze.toHTML(Blaze.With(data[id], function() { return Template[id]; }));
     /*return Template[data]; Blaze.toHTML(Template[data]);*/
 
@@ -36,6 +43,10 @@ Template['styleguide'].helpers({
 Template['styleguide'].events({
   'click .expander-trigger': function(e){
     $(e.target).toggleClass("expander-hidden");
+  },
+
+  'click .sg-header__logo' : function(){
+    getData();
   }
 });
 
@@ -44,13 +55,7 @@ Template['styleguide'].events({
 
 
 Template['styleguide'].rendered = function(){
-  HTTP.call("GET", '/styleguide-config.json', function(e, content){
-    var data = content.data;
-    if(data != null){
-      Session.set("sg-data", data);
-    }
-  });
-
+  getData();
 };
 
 

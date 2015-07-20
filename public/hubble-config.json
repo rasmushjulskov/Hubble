@@ -1,0 +1,14 @@
+{
+  "SECTION_NAME": {
+    "templates": [
+      {
+        "name": "TEMPLATE_NAME",
+        "data": {
+          "TEMPLATE_VAR": "header",
+          "TEMPLATE_VAR": "content"
+        }
+      },
+      {"name": "quote"}
+    ]
+  }
+}

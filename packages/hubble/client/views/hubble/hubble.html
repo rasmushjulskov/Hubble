@@ -1,8 +1,12 @@
 <template name="styleguide">
   <div class="sg-wrapper">
     <div class="sg-header">
-    <!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In  -->
       <div class="sg-header__wrapper">
+         {{#each navigation}}
+          <a class="sg-header__links" href="/hubble/{{this}}">
+            {{this}}
+          </a>
+        {{/each}}
         <div class="sg-header__logo">
           <svg version="1.1"
              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
@@ -34,11 +38,6 @@
 
           hubble
         </div>
-         {{#each navigation}}
-        <a class="sg-header__links" href="/styleguide/{{this}}">
-          {{this}}
-        </a>
-      {{/each}}
       </div>
     </div>
     <div class="sg-wrapper">
@@ -130,7 +129,7 @@
 
 </template>
 
-<template name="sgEmptyState">
+<template name="Welcome To Hubble">
   <h1>It seem's like something is missing</h1>
   <!--
     @summary Renders a template or View to a string of HTML.
@@ -140,4 +139,21 @@
   <p>
     <span>Click on 'show code' for an example</span>
   </p>
+  <!--
+    Add
+    {
+      "SECTION_NAME": {
+        "templates": [
+          {
+            "name": "TEMPLATE_NAME",
+            "data": {
+              "TEMPLATE_VAR": "header",
+              "TEMPLATE_VAR": "content"
+            }
+          },
+          {"name": "quote"}
+        ]
+      }
+    }
+  -->
 </template>

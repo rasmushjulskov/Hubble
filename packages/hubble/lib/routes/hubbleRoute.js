@@ -1,6 +1,6 @@
 Router.route('styleguide',   {
   template: 'styleguide',
-  path: '/styleguide/',
+  path: '/hubble/',
   onBeforeAction: function() {
     var data = Session.get("sg-data");
     if(data != null && data.length > 0 ){
@@ -15,7 +15,7 @@ Router.route('styleguide',   {
 
 Router.route('styleguideTemplates',   {
   template: 'styleguide',
-  path: '/styleguide/:_value',
+  path: '/hubble/:_value',
   onBeforeAction: function() {
     Session.set("sg-template", this.params._value);
     this.next();

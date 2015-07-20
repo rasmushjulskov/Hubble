@@ -47,10 +47,16 @@ $widescreen: 1200px;
 
   &__logo {
     padding: 6px 0;
-    width: 200px;
     float: left;
     text-align: center;
     background-color: rgba(0,0,0,.7);
+    flex-grow: 1;
+    order: -1;
+  }
+
+  a ~ .sg-header__logo {
+    width: 200px;
+    flex-grow: 0;
   }
 
   &__links {
