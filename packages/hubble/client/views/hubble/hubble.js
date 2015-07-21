@@ -31,13 +31,15 @@ Template['styleguide'].helpers({
   escaped: function(id) {
     var data = Session.get("sg-data") || Template;
     return Blaze.toHTML(Blaze.With(data[id], function() { return Template[id]; }));
-    /*return Template[data]; Blaze.toHTML(Template[data]);*/
+  },
+  summary: function(id) {
+    var data = Session.get("sg-data") || Template;
+    var str = Blaze.toHTML(Blaze.With(data[id], function() { return Template[id]; }))
+    if(str.indexOf("@summary") > -1 ){
+      return str.substring(str.indexOf("@summary")+9, str.indexOf("-->"));
+    }
+  },
 
-    /*Blaze.toHTML(Blaze.With({}, function(){
-       Template[data]
-    }));
-    */
-  }
 });
 
 Template['styleguide'].events({

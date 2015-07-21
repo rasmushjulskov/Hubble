@@ -11,12 +11,14 @@ $widescreen: 1200px;
 
 /* Default settings -------------------*/
 
-
+.sg-body {
+  padding-top: 80px;
+}
 
 .sg-wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  font-family: "helvetica";
+  font-family: Helvetica, Tahoma, Geneva
 }
 
 .sg-element {
@@ -81,6 +83,11 @@ $widescreen: 1200px;
   }
 }
 
+.sg-summary {
+  color: gray;
+  font-size: 16px;
+  text-transform: capitalize;
+}
 
 /* Color schema ---------------------*/
 
@@ -145,7 +152,7 @@ $widescreen: 1200px;
   text-align: center;
   margin: 10px 0 30px 0;
   display: block;
-  h6 {
+  span {
     background: #fff;
     color: gray;
     display: inline-block;
@@ -153,7 +160,7 @@ $widescreen: 1200px;
     font-weight: 500;
     padding: 0 10px;
     position: relative;
-    top: 46px;
+    top: 8px;
   }
 }
 
