@@ -1,3 +1,5 @@
+![Hubble](logo.png)
+
 Hubble 0.0.4
 ============
 
