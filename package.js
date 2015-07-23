@@ -1,6 +1,7 @@
 Package.describe({
   name: "rhjulskov:hubble",
   version: "0.0.4",
+  // debugOnly: true,
 
   // Brief, one-line summary of the package.
   summary: "Hubble — living style guide [BETA]",
@@ -15,19 +16,25 @@ Package.onUse(function (api) {
   api.use([
     "templating",
     "underscore",
-    "http",
     "markdown",
-    "simple:highlight.js@1.0.9",
+    "grigio:babel",
     "fourseven:scss@1.2.3",
-    "iron:router@1.0.7"
+    "raix:eventemitter",
+    "simple:highlight.js@1.0.9"
   ]);
 
   api.addFiles([
-    "client/routes.js",
-    "client/views/hubble.html",
-    "client/views/hubble.js",
-    "client/views/hubble.scss"
+    "lib/client.es6.js"
+    // "lib/views/main.html",
+    // "lib/views/main.js",
+    // "lib/views/main.scss"
   ], "client");
+
+  api.addFiles([
+    "lib/server.es6.js"
+  ], "server");
+
+  api.export("Hubble");
 });
 
 Package.onTest(function (api) {
