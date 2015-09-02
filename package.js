@@ -1,13 +1,10 @@
 Package.describe({
   name: 'rhjulskov:hubble',
-  version: '0.0.4',
+  version: '0.0.5',
   // Brief, one-line summary of the package.
   summary: 'Hubble — living style guide [BETA]',
   // URL to the Git repository containing the source code for this package.
-  git: 'https://github.com/Rhjulskov/hubble',
-  // By default, Meteor will default to using README.md for documentation.
-  // To avoid submitting documentation, set this field to null.
-  documentation: '../../README.md'
+  git: 'https://github.com/Rhjulskov/Hubble'
 });
 
 Package.onUse(function(api) {
@@ -17,12 +14,12 @@ Package.onUse(function(api) {
   api.use(['underscore', 'http', 'markdown', 'simple:highlight.js@1.0.9']);
 
   api.use(['fourseven:scss@1.2.3'],'client');
-  api.addFiles(['lib/routes/hubbleRoute.js']);
-  api.addFiles(['client/views/hubble/hubble.html','client/views/hubble/hubble.js', 'client/views/hubble/hubble.scss'], 'client');
+  api.addFiles(['client/routes.js']);
+  api.addFiles(['client/views/hubble.html','client/views/hubble.js', 'client/views/hubble.scss'], 'client');
 });
 
 Package.onTest(function(api) {
   api.use('tinytest');
   api.use('rhjulskov:hubble');
-  api.addFiles('hubble-tests.js');
+  api.addFiles('tests/hubble-tests.js');
 });
