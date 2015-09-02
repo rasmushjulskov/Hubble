@@ -28,6 +28,24 @@ $widescreen: 1200px;
   .sg-element__code {
 
   }
+
+  &--centered {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__params {
+    list-style: none;
+    font-weight: bold;
+    padding: 0.5rem 0;
+
+    span + span {
+      font-weight: normal;
+      font-style: italic;
+    }
+
+  }
 }
 
 .sg-header {
@@ -176,7 +194,7 @@ $widescreen: 1200px;
   display: block;
 }
 
-.expander {
+.sg-expander {
   ///////////////////////////////////////////////////////////////////////////////////
   $base-font-size: 1em !default;
   $base-line-height: 1.5em !default;
@@ -205,7 +223,7 @@ $widescreen: 1200px;
 
   width: 100%;
 
-  .expander-trigger {
+  &-trigger {
     user-select: none;
     cursor: pointer;
     display: block;
@@ -220,14 +238,14 @@ $widescreen: 1200px;
     }
   }
 
-  .expander-hidden {
+  &-hidden {
     &:before {
       font-size: $expander-arrow-width;
       content: "\25BA";
     }
   }
 
-  .expander-hidden + .expander-content {
+  &-hidden + .sg-expander-content {
     display: none;
   }
 }

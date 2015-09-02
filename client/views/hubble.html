@@ -45,18 +45,33 @@
         {{#each atoms}}
           <div class="sg-element">
             {{> sgheader header=this.name}}
+
             {{#if summary this.name}}
               <div class="sg-summary">
                 {{ summary this.name}}
               </div>
             {{/if}}
-            <div class="sg-element">
+
+            {{#if params this.data}}
+              <ul class="sg-element__params">
+                <!--<li>Template parameters:</li>-->
+              {{#each params this.data}}
+                <li>
+                {{#each this}}
+                  <span>{{this}}</span>
+                {{/each}}
+                </li>
+              {{/each}}
+              </ul>
+            {{/if}}
+
+            <div class="sg-element {{#if this.centered}}sg-element--centered{{/if}}">
               {{> Template.dynamic  template=this.name data=this.data }}
             </div>
 
-            <div class="expander">
-              <a class="expander-trigger expander-hidden">Show code</a>
-              <div class="sg-element__code expander-content">
+            <div class="sg-expander">
+              <a class="sg-expander-trigger sg-expander-hidden">Show code</a>
+              <div class="sg-element__code sg-expander-content">
               {{#markdown}}
 ```html
   {{ escaped this.name }}
