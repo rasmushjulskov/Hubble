@@ -1,6 +1,6 @@
 ![Hubble](logo.png)
 
-Hubble 0.0.4
+Hubble 0.0.5
 ============
 
 Hubble is a living styleguide for Meteor. Hubble isn't based on any predefined structure or methodology, but is instead fully adjustable by a simple json structure.
