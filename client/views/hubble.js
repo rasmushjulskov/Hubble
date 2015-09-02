@@ -1,6 +1,6 @@
 var getData = function(){
-  HTTP.call("GET", '/hubble-config.json', function(e, content){
-    var data = content.data;
+  HTTP.call("GET", '/hubble-config.json', function(e, res){
+    var data = res.data;
     if(data != null){
       Session.set("sg-data", data);
     }
@@ -24,6 +24,7 @@ Template['styleguide'].helpers({
   },
   navigation: function(){
     var data = Session.get("sg-data");
+
     if(data != null){
       return _.keys(data);
     }
@@ -35,16 +36,33 @@ Template['styleguide'].helpers({
   summary: function(id) {
     var data = Session.get("sg-data") || Template;
     var str = Blaze.toHTML(Blaze.With(data[id], function() { return Template[id]; }))
-    if(str.indexOf("@summary") > -1 ){
-      return str.substring(str.indexOf("@summary")+9, str.indexOf("-->"));
+    if(str.indexOf("@hubble") > -1 ){
+      return str.substring(str.indexOf("@hubble")+8, str.indexOf("-->"));
     }
   },
+  params: function(data) {
+    if(data == undefined) {
+      return false;
+    }
+
+    if(typeof data === "object" && data.length == undefined) {
+      var pairs = _.pairs(data);
+
+      // Change value of the data object to the typeof
+      pairs.forEach(function(para, index){
+        pairs[index][1] = typeof para[1];
+      });
+
+      return pairs;
+    }
+
+  }
 
 });
 
 Template['styleguide'].events({
-  'click .expander-trigger': function(e){
-    $(e.target).toggleClass("expander-hidden");
+  'click .sg-expander-trigger': function(e){
+    $(e.target).toggleClass("sg-expander-hidden");
   },
 
   'click .sg-header__logo' : function(){
