@@ -117,7 +117,8 @@ $widescreen: 1200px;
   list-style: none;
 
   li {
-    display: flex;
+    position: relative;
+    padding: 10px;
     margin-bottom: 10px;
 
     @media screen and (max-width: $phablet) {
@@ -140,8 +141,8 @@ $widescreen: 1200px;
     .sg-color {
       border: 1px solid #cacaca;
       position: relative;
-      width: 50%;
-      padding-top: 50%;
+      width: 100%;
+      padding-top: 100%;
 
       .sg-color__variation {
         position: absolute;
@@ -157,8 +158,12 @@ $widescreen: 1200px;
     }
 
     .sg-color__text {
-      width: 50%;
-      padding: 10px;
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      z-index: 1;
+      width: calc( 100% - 30px );
+      padding: 6px;
     }
   }
 }
@@ -171,6 +176,8 @@ $widescreen: 1200px;
   text-align: center;
   margin: 10px 0 30px 0;
   display: block;
+  line-height: 1em;
+
   span {
     background: #fff;
     color: gray;

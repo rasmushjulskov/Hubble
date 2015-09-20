@@ -21,8 +21,12 @@ The structure for the config file is as follows:
         // Each template is an object with atleast an name key
         // The name key should be equal the name of the Blaze template
         "name": "TEMPLATE_NAME",
-        // Optional: declare the date for the blaze template if needed
-        // This data is also shown in the styleguide
+
+        // Optional:  
+        "centered": true,
+
+        // Optional: declare the data for the blaze template if needed
+        // This data is also shown above the element in the styleguide
         "data": {
           "DATA_KEY": "DATA_VALUE",
           "DATA_KEY": "DATA_VALUE"
@@ -34,8 +38,15 @@ The structure for the config file is as follows:
   // ... and so on
 }
 ```
+
+## Features
+
+### Summary
 To declare a summary to an element in the styleguide, start a comment in the given template, with the prefix @hubble.
 
+
+
+### Predefined templates
 Hubble comes with 2 predefined templates for showing colors and fonts: sgcolors & sgfonts. An example of using these is given after installing the package.
 
 
